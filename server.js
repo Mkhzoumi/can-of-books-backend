@@ -5,9 +5,12 @@ app.use(cors()) // after you initialize your express app instance
 require('dotenv').config();
 const axios = require('axios');
 const port =process.env.PORT;
+const mongoose = require('mongoose');
 
 
-
+mongoose.connect('mongodb://localhost:27017/myFavoriteBooks',
+    { useNewUrlParser: true, useUnifiedTopology: true }
+);
 
 
 // a server endpoint 
@@ -16,4 +19,6 @@ app.get('/', // our endpoint name
   res.send('Hello World') // our endpoint function response
 })
  
+app.get('/books', getBooks) 
+
 app.listen(port) // kick start the express server to work
