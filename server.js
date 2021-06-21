@@ -6,17 +6,17 @@ require('dotenv').config();
 const port =process.env.PORT;
 const mongoose = require('mongoose');
 const getBooks = require('./controllers/Book.controller');
-const seedUserData = require('./models/User.model');
+// const seedUserData = require('./models/User.model');
 
 
-mongoose.connect('mongodb://localhost:27017/myFavoriteBooks',
+mongoose.connect('mongodb://localhost:27017/FavoriteBooks',
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 
 
 
-seedUserData();
+// seedUserData();
 
 // a server endpoint 
 app.get('/', // our endpoint name
