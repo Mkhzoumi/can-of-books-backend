@@ -33,6 +33,11 @@ const seedUserData = () => {
             name: 'Html',
             description: 'test HTML',
             status: 'available',
+        },
+        {
+            name: 'python',
+            description: 'test test',
+            status: 'available',
         }
        
         ]
@@ -43,3 +48,4 @@ newUser.save();
 }
 
 module.exports = userModel;
+module.exports = seedUserData;
