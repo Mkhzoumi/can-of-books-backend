@@ -8,8 +8,8 @@ const port =process.env.PORT;
 const mongoose = require('mongoose');
 const{
  addBook,
- getBooks
- }= require('./controllers/Book.controller');
+ getBooks,
+ deleteBook}= require('./controllers/Book.controller');
 
 // const seedUserData = require('./models/User.model');
 
@@ -31,4 +31,5 @@ app.get('/', // our endpoint name
  
 app.get('/books', getBooks);
 app.post('/book' , addBook);
+app.delete('/book/:book_idx', deleteBook);
 app.listen(port) // kick start the express server to work
