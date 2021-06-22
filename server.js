@@ -1,11 +1,16 @@
 const express = require('express') // require the express package
 const app = express() // initialize your express app instance
 const cors = require('cors');
+app.use(express.json())
 app.use(cors()) // after you initialize your express app instance
 require('dotenv').config();
 const port =process.env.PORT;
 const mongoose = require('mongoose');
-const getBooks = require('./controllers/Book.controller');
+const{
+ addBook,
+ getBooks
+ }= require('./controllers/Book.controller');
+
 // const seedUserData = require('./models/User.model');
 
 
@@ -25,5 +30,5 @@ app.get('/', // our endpoint name
 })
  
 app.get('/books', getBooks);
-
+app.post('/book' , addBook);
 app.listen(port) // kick start the express server to work
