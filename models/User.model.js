@@ -45,7 +45,7 @@ const seedUserData = () => {
     console.log(newUser);
 
 }
-seedUserData();
+// seedUserData();
 
 module.exports = userModel;
 // module.exports = seedUserData;
