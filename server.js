@@ -5,6 +5,7 @@ app.use(express.json())
 app.use(cors()) // after you initialize your express app instance
 require('dotenv').config();
 const port =process.env.PORT;
+const mongoUrl = process.env.MONGO_URL;
 const mongoose = require('mongoose');
 const{
  addBook,
@@ -14,7 +15,7 @@ const{
 // const seedUserData = require('./models/User.model');
 
 
-mongoose.connect('mongodb://localhost:27017/FavoriteBooks',
+mongoose.connect(`${mongoUrl}`,
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
